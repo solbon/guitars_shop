@@ -1,16 +1,18 @@
+package com.example;
+
 /**
  * Created by sdaribazaron on 2016-09-23.
  */
 public class Guitar {
     private String serialNumber;
-    private String builder;
+    private Builder builder;
     private String model;
-    private String type;
-    private String backWood;
-    private String topWood;
+    private Type type;
+    private Wood backWood;
+    private Wood topWood;
     private double price;
 
-    public Guitar(String serialNumber, Double price, String builder, String model, String type, String backWood, String topWood) {
+    public Guitar(String serialNumber, double price, Builder builder, String model, Type type, Wood backWood, Wood topWood) {
         this.serialNumber = serialNumber;
         this.price = price;
         this.builder = builder;
@@ -25,11 +27,11 @@ public class Guitar {
         return serialNumber;
     }
 
-    public void setPrice(Double price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 
-    public String getBuilder() {
+    public Builder getBuilder() {
         return builder;
     }
 
@@ -37,15 +39,15 @@ public class Guitar {
         return model;
     }
 
-    public String getType() {
+    public Type getType() {
         return type;
     }
 
-    public String getBackWood() {
+    public Wood getBackWood() {
         return backWood;
     }
 
-    public String getTopWood() {
+    public Wood getTopWood() {
         return topWood;
     }
 
