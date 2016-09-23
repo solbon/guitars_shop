@@ -54,4 +54,17 @@ public class Guitar {
     public double getPrice() {
         return price;
     }
+
+    @Override
+    public String toString() {
+        return "Guitar{" +
+                "serialNumber='" + serialNumber + '\'' +
+                ", builder=" + builder +
+                ", model='" + model + '\'' +
+                ", type=" + type +
+                ", backWood=" + backWood +
+                ", topWood=" + topWood +
+                ", price=" + price +
+                '}';
+    }
 }

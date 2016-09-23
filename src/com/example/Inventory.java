@@ -1,5 +1,6 @@
 package com.example;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
@@ -31,10 +32,11 @@ public class Inventory {
         return null;
     }
 
-    public Guitar search(Guitar searchGuitar) {
+    public List<Guitar> search(Guitar searchGuitar) {
+        List<Guitar> list = new ArrayList<>();
         for (Iterator i = guitars.iterator(); i.hasNext(); ) {
             Guitar guitar = (Guitar) i.next();
-            if (searchGuitar.getBuilder() != guitar.getBuilder(   ))
+            if (searchGuitar.getBuilder() != guitar.getBuilder())
                 continue;
             String model = searchGuitar.getModel().toLowerCase();
             if ((model != null) && (!model.isEmpty()) && !model.equals(guitar.getModel().toLowerCase()))
@@ -45,8 +47,9 @@ public class Inventory {
                 continue;
             if (searchGuitar.getTopWood() != guitar.getTopWood())
                 continue;
+            list.add(guitar);
         }
-        return null;
+        return list;
     }
 
 }
