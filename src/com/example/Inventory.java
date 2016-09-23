@@ -23,8 +23,7 @@ public class Inventory {
     }
 
     public Guitar getGuitar(String serialNumber) {
-        for (Iterator i = guitars.iterator(); i.hasNext(); ) {
-            Guitar guitar = (Guitar) i.next();
+        for (Guitar guitar : guitars) {
             if (guitar.getSerialNumber().equals(serialNumber)) {
                 return guitar;
             }
@@ -34,8 +33,7 @@ public class Inventory {
 
     public List<Guitar> search(Guitar searchGuitar) {
         List<Guitar> list = new ArrayList<>();
-        for (Iterator i = guitars.iterator(); i.hasNext(); ) {
-            Guitar guitar = (Guitar) i.next();
+        for (Guitar guitar : guitars) {
             if (searchGuitar.getBuilder() != guitar.getBuilder())
                 continue;
             String model = searchGuitar.getModel().toLowerCase();
