@@ -11,17 +11,18 @@ public class FindGuitarTester {
         Inventory inventory = new Inventory();
         initializeInventory(inventory);
 
-        Guitar whatErinLikes = new Guitar("", 0.0, Builder.FENDER, "Stratocastor", Type.ELECTRIC, Wood.ALDER, Wood.ALDER);
+        GuitarSpec whatErinLikes = new GuitarSpec(Builder.FENDER, "Stratocastor", Type.ELECTRIC, Wood.ALDER, Wood.ALDER);
         List<Guitar> guitars = inventory.search(whatErinLikes);
 
         if (guitars.size() != 0) {
             System.out.println("Erin, you might like these guitars: ");
             for (Guitar guitar : guitars) {
+                GuitarSpec guitarSpec = guitar.getSpec();
                 System.out.println("We have a " +
-                        guitar.getBuilder() + " " + guitar.getModel() + " " +
-                        guitar.getType() + " guitar:\n " +
-                        guitar.getBackWood() + " back and sides, \n " +
-                        guitar.getTopWood() + " top.\nYou can have it for only $" +
+                        guitarSpec.getBuilder() + " " + guitarSpec.getModel() + " " +
+                        guitarSpec.getType() + " guitar:\n " +
+                        guitarSpec.getBackWood() + " back and sides, \n " +
+                        guitarSpec.getTopWood() + " top.\nYou can have it for only $" +
                         guitar.getPrice() + "!\n ----");
             }
         } else {
@@ -32,8 +33,8 @@ public class FindGuitarTester {
 
     private static void initializeInventory(Inventory inventory) {
         // add guitars ...
-        inventory.addGuitar("V95693", 1499.95, Builder.FENDER, "Stratocastor", Type.ELECTRIC, Wood.ALDER, Wood.ALDER);
-        inventory.addGuitar("V9512", 1549.95, Builder.FENDER, "Stratocastor", Type.ELECTRIC, Wood.ALDER, Wood.ALDER);
+        inventory.addGuitar("V95693", 1499.95, new GuitarSpec(Builder.FENDER, "Stratocastor", Type.ELECTRIC, Wood.ALDER, Wood.ALDER));
+        inventory.addGuitar("V9512", 1549.95, new GuitarSpec(Builder.FENDER, "Stratocastor", Type.ELECTRIC, Wood.ALDER, Wood.ALDER));
     }
 }
 
