@@ -1,0 +1,27 @@
+[http]
+	proxy = http://sdaribazaron:March0103@10.0.1.6:3128
+[user]
+	name = Solbon Daribazaron
+	email = s.daribazaron@visiona.pl
+[alias]
+	st = status
+	unstage = reset HEAD --
+	ch = checkout
+	br = branch
+	last = log -1 HEAD
+	last3 = log -3 HEAD
+	hist = log --pretty=format:\"%h %ad | %s%Cred%d %C(yellow)[%an]\" --graph --date=short
+	ci = commit
+	co = checkout
+	repo-config = config
+	del = branch -D
+	hide = update-index --assume-unchanged
+	unhide = update-index --no-assume-unchanged
+	ls = log --pretty=format:\"%C(yellow)%h%Cred%d\\\\ %Creset%s%Cblue\\\\ [%cn]\" --decorate
+	drop = reset --hard HEAD^
+[core]
+	autocrlf = input
+[merge]
+	tool = kdiff3
+[diff]
+	tool = meld
