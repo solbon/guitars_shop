@@ -1,4 +1,4 @@
-package com.example;
+package com.example.enums;
 
 /**
  * Created by xyz on 2016-09-23.

@@ -1,5 +1,9 @@
 package com.example;
 
+import com.example.enums.Builder;
+import com.example.enums.Type;
+import com.example.enums.Wood;
+
 /**
  * Created by xyz on 2016-09-23.
  */

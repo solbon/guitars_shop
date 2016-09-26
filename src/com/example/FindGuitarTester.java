@@ -1,5 +1,9 @@
 package com.example;
 
+import com.example.enums.Builder;
+import com.example.enums.Type;
+import com.example.enums.Wood;
+
 import java.util.List;
 
 /**
