@@ -1,7 +1,6 @@
 package com.example;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -34,18 +33,8 @@ public class Inventory {
         List<Guitar> list = new ArrayList<>();
         for (Guitar guitar : guitars) {
             GuitarSpec spec = guitar.getSpec();
-            if (searchSpec.getBuilder() != spec.getBuilder())
-                continue;
-            String model = searchSpec.getModel().toLowerCase();
-            if ((model != null) && (!model.isEmpty()) && !model.equals(spec.getModel().toLowerCase()))
-                continue;
-            if (searchSpec.getType() != spec.getType())
-                continue;
-            if (searchSpec.getBackWood() != spec.getBackWood())
-                continue;
-            if (searchSpec.getTopWood() != spec.getTopWood())
-                continue;
-            list.add(guitar);
+            if (searchSpec.equals(spec))
+                list.add(guitar);
         }
         return list;
     }
